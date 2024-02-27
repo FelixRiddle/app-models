@@ -1,6 +1,8 @@
 const { DataTypes } = require("sequelize");
 
 const mysqlConn = require("../../../connection/mysqlConn");
+const Category = require("./Category");
+const Price = require("./Price");
 const User = require("./User");
 
 function Property() {
@@ -57,7 +59,9 @@ function Property() {
         tableName: "property",
     });
     
-    model.belongsTo(User());
+    model.belongsTo(new User());
+    model.belongsTo(new Category());
+    model.belongsTo(new Price());
     
     return model;
 }

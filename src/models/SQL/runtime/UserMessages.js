@@ -27,7 +27,7 @@ function UserMessages() {
         tableName: "user-messages",
     });
     
-    model.belongsTo(User());
+    model.belongsTo(new User());
     
     return model;
 }

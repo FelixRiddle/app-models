@@ -1,7 +1,6 @@
 const { DataTypes } = require("sequelize");
 
 const mysqlConn = require("../../../connection/mysqlConn");
-const Property = require("./Property");
 
 /**
  * Runtime definition
@@ -9,7 +8,7 @@ const Property = require("./Property");
  * @returns 
  */
 function Category() {
-    const model = mysqlConn().define("category", {
+    const Model = mysqlConn().define("category", {
         name: {
             type: DataTypes.STRING(128),
             allowNull: false,
@@ -18,9 +17,7 @@ function Category() {
         tableName: "category",
     });
     
-    Property().belongsTo(model);
-    
-    return model;
+    return Model;
 }
 
 module.exports = Category;
