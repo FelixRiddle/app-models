@@ -6,7 +6,7 @@ const mysqlConn = require("../../../connection/mysqlConn");
 function User() {
     const TABLE_NAME = "user";
     
-    const model = mysqlConn().define("user", {
+    const model = mysqlConn().define(TABLE_NAME, {
         id: {
             type: DataTypes.BIGINT,
             allowNull: false,
