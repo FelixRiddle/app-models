@@ -1,4 +1,10 @@
 const Sequelize = require("sequelize");
+const dotenv = require("dotenv");
+
+// Setup dotenv
+dotenv.config({
+    path: ".env"
+});
 
 module.exports = function MSQLDC_FetchENV() {
     // Mysql information
