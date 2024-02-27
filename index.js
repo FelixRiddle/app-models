@@ -10,7 +10,7 @@ const {
     Property,
     User,
     UserMessages,
-} = require("./src/models/SQL/index.js");
+} = require("./src/models/SQL/runtime/index.js");
 const MODEL = require("./src/models/SQL/index.js");
 
 module.exports = {
