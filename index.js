@@ -1,24 +1,23 @@
 // Connections
 const MSQLDC_FetchENV = require("./src/connection/MSQLDC_FetchENV");
+const mysqlConn = require("./src/connection/mysqlConn.js");
 const MySQLDatabaseConnection = require("./src/connection/MySQLDatabaseConnection.js");
 
-// Models
-const MODEL = require("./src/models/SQL/index");
-
-const Category = require("./src/models/SQL/Category");
-const DebugPropertyImageUpload = require("./src/models/SQL/DebugPropertyImageUpload");
-const Price = require("./src/models/SQL/Price");
-const Property = require("./src/models/SQL/Property");
-const User = require("./src/models/SQL/User");
-const UserMessages = require("./src/models/SQL/UserMessages");
+const {
+    Category,
+    DebugPropertyImageUpload,
+    Price,
+    Property,
+    User,
+    UserMessages,
+} = require("./src/models/SQL/index.js");
 
 module.exports = {
     // Connectors
     // To connect to the database
     MSQLDC_FetchENV,
+    mysqlConn,
     MySQLDatabaseConnection,
-    
-    MODEL,
     
     // Default exports
     Category,
