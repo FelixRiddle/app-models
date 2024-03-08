@@ -22,8 +22,6 @@ module.exports = function MSQLDC_FetchENV() {
             timestamps: true,
         },
         pool: {
-            max: 5,
-            min: 0,
             acquire: 30000,
             idle: 60 * 1000,
         },
