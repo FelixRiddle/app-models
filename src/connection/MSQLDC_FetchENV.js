@@ -22,8 +22,14 @@ module.exports = function MSQLDC_FetchENV() {
             timestamps: true,
         },
         pool: {
-            acquire: 30000,
-            idle: 60 * 1000,
+            // The default is 5, so we have to forcefully set a high limit
+            // 30 per processor seems ok, I have 16, hmmm this won't work if others have less processors.
+            // I could fetch how many processors the computer has, but this problem is too tiny for my concern.
+            max: 16 * 30,
+            // Ten seconds
+            acquire: 10 * 1000,
+            // Five seconds of idling
+            idle: 5 * 1000,
         },
         operatorAliases: false,
         // Disable logging
